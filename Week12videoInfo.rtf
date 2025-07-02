@@ -1,0 +1,271 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+Week 12: APIs & Fetching\par
+Concepts: Front-End vs Back-End: Build an understanding of the roles of a Front-End and Back-End, and how they work together\par
+Fetching: Getting Data From an API: Get data from a free public API and show it in an app\par
+Tools: Network Tab: Use the Network Tab of the Developer Tools to debug fetch requests and responses\par
+Tools: json-server: Set up json-server to use as a practice backend\par
+Fetching: Creating, Updating & Deleting: Make POST, DELETE, and PUT requests to an API\par
+Fetching: Data Syncing: Keep data synced between Front-End state and a Back-End database\par
+\par
+Video Summary: Understanding Frontend and Backend\par
+Frontend\par
+Frontend Code: Runs in the browser, enabling interactive user interfaces.\par
+\par
+Limitations: Frontend code lacks long-term memory. It forgets data when the browser tab is refreshed or closed.\par
+\par
+Storage Challenges: Storing data on a user's device is impractical as it is not accessible across multiple devices and requires the device to be constantly on and connected.\par
+\par
+Backend\par
+Purpose: Provides long-term memory and stores data for frontend applications.\par
+\par
+Server Role: Acts as a centralized computer that handles data requests from various user devices. This server, known as the backend, stores all user data securely.\par
+\par
+API: Backend code that handles requests from the frontend about data. It facilitates communication and data exchange between the frontend and the server.\par
+\par
+Additional Functions: Besides storing data, the server can host frontend files and perform resource-intensive tasks like generating images or processing large data sets.\par
+\par
+Integration of Frontend and Backend\par
+Combined Use: Most modern applications require both frontend and backend code to function efficiently. The frontend provides the user interface, while the backend manages data and complex operations.\par
+\par
+Alternative Setups: Some applications may use a "dumb" backend for hosting frontend code without long-term memory needs (e.g., calculators, simple games). Conversely, some websites render pages on the backend with minimal frontend code, though this can slow down interactions.\par
+\par
+Static Websites: Basic sites can be built using only HTML and CSS, hosted on a simple backend without additional frontend or backend code. These are suitable for resumes or simple business sites.\par
+\par
+The video emphasizes the importance of understanding the roles of frontend and backend in building robust and user-friendly web applications.\par
+Video Summary: How to Get Data from an API on the Backend\par
+In this video, you'll learn how to get data from a REST API on the backend, including how to read API documentation, make HTTP requests, manage asynchronous code, and handle HTTP responses.\par
+\par
+Understanding APIs\par
+API: Part of the backend that handles requests about data.\par
+REST APIs: The most common type of APIs, built following specific guidelines.\par
+\par
+Steps to Get Data from an API\par
+Read API Documentation:\par
+Get the API key and the URL to fetch data from.\par
+\par
+Make HTTP Requests:\par
+Use JavaScript's Fetch function or the Axios library to make HTTP requests.\par
+\par
+Manage Asynchronous Code:\par
+Use async/await or .then syntax to handle asynchronous code.\par
+\par
+Handle HTTP Responses:\par
+Check the status and parse the JSON data from the response.\par
+\par
+Example: Fetching Data from a LEGO API\par
+Step 1: Go to the API documentation to get the API key and URL.\par
+Step 2: Register and generate an API key.\par
+Step 3: Use the documentation to build the fetch URL with base URL, endpoint, and parameters.\par
+Step 4: Write the fetch code in JavaScript.\par
+\par
+Building the Fetch URL\par
+The URL is built from three parts: the base URL, the endpoint, and any needed parameters. Query parameters go at the end of the URL after a question mark symbol.\par
+\par
+Writing the Fetch Code\par
+Step 1: Build the URL using the base URL, endpoint, and parameters.\par
+Step 2: Make a fetch request to this URL and log the response.\par
+Step 3: Handle the response and parse the JSON data.\par
+\par
+Handling Asynchronous Code\par
+Asynchronous code allows parts of the code to run in the background while other code is also running. Use the async keyword to mark functions as asynchronous and the await keyword to wait for the function to finish.\par
+\par
+Example: Fetching Movie Data from the OMDB API\par
+Step 1: Get the API key from the OMDB API documentation.\par
+Step 2: Build the fetch URL with the API key and desired parameters.\par
+Step 3: Write the fetch code and handle the response.\par
+\par
+By following these steps, you can fetch data from any REST API that uses an API key to authenticate.\par
+*****\par
+Video Summary: Using the Network Tab to Debug HTTP Requests\par
+In this video, we'll take a tour of the network tab in browser developer tools and learn how to use it to see and debug HTTP requests.\par
+\par
+Network Tab Overview\par
+The network tab in browser developer tools shows all HTTP requests made while the tab is open.\par
+\par
+Refresh the page to see requests for the HTML page and JavaScript files.\par
+Click the fetch button to see fetch requests, including the URL, request method, and status code.\par
+Preview and response tabs show data returned in the response.\par
+Using the Network Tab\par
+URL and Request Method: View the URL the request was made to and the request method (e.g., GET).\par
+Status Code: See the status code returned in the response (e.g., 200 OK).\par
+\par
+The preview tab displays the response body in an expandable format, while the response tab shows it as a JSON file.\par
+\par
+Debugging with the Network Tab\par
+The headers tab is useful for debugging requests. Common errors include:\par
+\par
+4xx Errors: Client-side errors. For example, 404 Not Found indicates a typo in the URL.\par
+401 Unauthorized: Indicates an issue with authentication, such as a missing or incorrect API key.\par
+CORS Errors: Cross-Origin Resource Sharing errors occur when trying to access an API from a different base URL than the frontend. This can be due to authentication issues, incorrect URLs, or incorrect request methods.\par
+Example Debugging Scenarios\par
+Typo in URL: Adding a typo to the URL results in a 404 Not Found error.\par
+Missing API Key: Removing the API key results in a 401 Unauthorized error.\par
+CORS Error: Incorrectly forming the URL can result in a CORS error.\par
+\par
+Conclusion\par
+The network tab is a powerful tool for debugging HTTP requests. By understanding how to use it, you can efficiently debug and troubleshoot issues in your web applications.\par
+Video Summary: Using JSON Server Library as a Test API\par
+In this video, we'll learn how to use the JSON Server Library to create a test API on our local machine for practicing backend interactions.\par
+\par
+Overview\par
+JSON Server allows us to create mock APIs with data stored in a JSON file, which is useful for practicing how to interact with a backend API.\par
+\par
+Installation\par
+First, we need to install JSON Server globally using NPM with the command:\par
+\par
+npm install -g json-server@0.17.4\par
+This command installs JSON Server for the entire computer, so we only need to run it once.\par
+\par
+Creating a Database File\par
+Next, we create a db.json file to hold our test data. For this example, we'll use genres, movies, and reviews.\par
+\par
+Example db.json:\par
+\{\par
+  "genres": [\par
+    \{ "id": 1, "name": "Sci-Fi" \},\par
+    \{ "id": 2, "name": "Romantic" \}\par
+  ],\par
+  "movies": [\par
+    \{ "id": 1, "title": "Inception", "genreId": 1 \},\par
+    \{ "id": 2, "title": "The Notebook", "genreId": 2 \}\par
+  ],\par
+  "reviews": [\par
+    \{ "id": 1, "movieId": 1, "content": "Amazing!" \},\par
+    \{ "id": 2, "movieId": 2, "content": "Heartwarming." \}\par
+  ]\par
+\}\par
+Starting JSON Server\par
+To start JSON Server, run the following command in the directory containing the db.json file:\par
+\par
+json-server --watch db.json\par
+This starts the server and provides endpoints for genres, movies, and reviews.\par
+\par
+Testing the Endpoints\par
+You can test the endpoints by navigating to them in your browser:\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://localhost:3000/genres }}{\fldrslt{http://localhost:3000/genres\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK http://localhost:3000/movies }}{\fldrslt{http://localhost:3000/movies\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK http://localhost:3000/reviews }}{\fldrslt{http://localhost:3000/reviews\ul0\cf0}}}}\f0\fs22\par
+Changing the Port\par
+If you need to change the port, use the --port flag:\par
+\par
+json-server --watch db.json --port 3005\par
+Example Frontend Code\par
+Create an index.html and a test.js file. Connect them and add a button to fetch movies from the API:\par
+\par
+index.html:\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>JSON Server Test</title>\par
+</head>\par
+<body>\par
+    <button id="fetch-movies">Fetch Movies</button>\par
+    <div id="movies-container"></div>\par
+    <script src="test.js"></script>\par
+</body>\par
+</html>\par
+test.js:\par
+document.getElementById('fetch-movies').addEventListener('click', async () => \{\par
+    const response = await fetch('http://localhost:3005/movies');\par
+    const movies = await response.json();\par
+    const container = document.getElementById('movies-container');\par
+    container.innerHTML = '';\par
+    movies.forEach(movie => \{\par
+        const movieDiv = document.createElement('div');\par
+        movieDiv.innerHTML = `<h3>$\{movie.title\}</h3><p>Genre ID: $\{movie.genreId\}</p>`;\par
+        container.appendChild(movieDiv);\par
+    \});\par
+\});\par
+Conclusion\par
+We've learned how to use JSON Server to create a test API for practicing backend interactions. This allows us to simulate more complex front-end and back-end communication.\par
+*****\par
+Video Summary: Using Fetch to Create, Update, and Delete Data on the Backend\par
+In this video, we'll learn how to use the fetch API to create, update, and delete data on a backend server using JSON Server as our test API.\par
+\par
+Overview\par
+Besides the GET method, we have other HTTP methods like POST (create), PUT (update), and DELETE (remove). These methods allow us to interact with our backend in more complex ways.\par
+\par
+Additional Fetch Parameters\par
+When making POST, PUT, and DELETE requests, we need to provide additional options to the fetch function. The three main properties we use are:\par
+\par
+method: Specifies the type of request (e.g., POST, PUT, DELETE).\par
+headers: Specifies the content type (e.g., application/json).\par
+body: Contains the data we want to send, typically serialized as a JSON string.\par
+Creating Data with POST\par
+To create a new movie, we'll define a function that makes a POST request with the movie data:\par
+\par
+JavaScript Code:\par
+async function onCreateMovieClick() \{\par
+    const response = await fetch('http://localhost:3000/movies', \{\par
+        method: 'POST',\par
+        headers: \{\par
+            'Content-Type': 'application/json'\par
+        \},\par
+        body: JSON.stringify(\{ title: 'Test', genreId: 1 \})\par
+    \});\par
+    const newlyCreatedItem = await response.json();\par
+    lastCreatedItem = newlyCreatedItem;\par
+\}\par
+We'll add a button in our HTML to trigger this function:\par
+\par
+HTML Code:\par
+<button id="create-movie">Create Test Movie</button>\par
+Updating Data with PUT\par
+To update a movie, we'll define a function that makes a PUT request with the updated data:\par
+\par
+JavaScript Code:\par
+async function onUpdateMovieClick() \{\par
+    if (!lastCreatedItem) \{\par
+        console.log('No item created yet to update');\par
+        return;\par
+    \}\par
+    await fetch(`http://localhost:3000/movies/$\{lastCreatedItem.id\}`, \{\par
+        method: 'PUT',\par
+        headers: \{\par
+            'Content-Type': 'application/json'\par
+        \},\par
+        body: JSON.stringify(\{ title: 'Test Updated', genreId: 2 \})\par
+    \});\par
+\}\par
+We'll add a button in our HTML to trigger this function:\par
+\par
+HTML Code:\par
+<button id="update-movie">Update Test Movie</button>\par
+Deleting Data with DELETE\par
+To delete a movie, we'll define a function that makes a DELETE request:\par
+\par
+JavaScript Code:\par
+async function onDeleteMovieClick() \{\par
+    if (!lastCreatedItem) \{\par
+        console.log('No item created yet to delete');\par
+        return;\par
+    \}\par
+    await fetch(`http://localhost:3000/movies/$\{lastCreatedItem.id\}`, \{\par
+        method: 'DELETE'\par
+    \});\par
+\}\par
+We'll add a button in our HTML to trigger this function:\par
+\par
+HTML Code:\par
+<button id="delete-movie">Delete Test Movie</button>\par
+Handling Live Server Auto-Reloads\par
+If your page is reloading unexpectedly when making requests, it might be due to your live server configuration. To prevent this, configure live server to ignore changes to the database file:\par
+\par
+VS Code Settings:\par
+// settings.json\par
+"liveServer.settings.ignoreFiles": [\par
+    "**/*.json"\par
+]\par
+Conclusion\par
+In this video, we've learned how to make POST, PUT, and DELETE requests using fetch to create, update, and delete data. We've also addressed the issue of live server auto-reloading and configured it to ignore changes to JSON files.\par
+****\par
+\par
+\par
+}
+ 

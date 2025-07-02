@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using an Random Movie API</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<header> <!-- My BootStrap Header with Drop Simple DropShadow--> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="images/movie-trendy-banner-vector.jpg" class="img-fluid shadow-lg" alt="Banner Image">
+    </div>
+  </div>
+</div> 
+</header>
+<body> <!-- My  My BootStrapper Container Centered--> 
+    <div class="container d-flex justify-content-center">
+        
+        
+        <div class="text-center">
+            <h2>Friday Night Movie Generator</h2>
+            <!-- Simple Button to active my Movie API JSON Generator--> 
+            <button class="btn btn-primary mb-3" onclick="onFetchMovieClick()">Random Movie</button>
+            <div id="movie-container"> <!--  Movie Container for API JSON Generator information--> 
+
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <script src="API_KEY.js"></script>
+    <script src="scriptIMDB.js"></script>
+</body>
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Friday Night Movie Generator</h5>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Home</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Facebook</a></li>
+          <li><a href="#" class="text-white">Twitter</a></li>
+          <li><a href="#" class="text-white">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="mb-0">&copy; Darin Sicurello 2025</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</html>
