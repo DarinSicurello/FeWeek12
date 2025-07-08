@@ -59,7 +59,6 @@ const movieTitles = [
   "Silent Empire",
   "The Hidden War",
   "Final Guardian",
-  "Crimson Journey",
   "The Burning Legend",
   "Shadow Empire",
   "The Frozen War",

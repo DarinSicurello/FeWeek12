@@ -69,12 +69,12 @@ function renderFilms(arr) {
 }
 
 //MOVIES Button
-
+/*
 async function onFetchFilmsClick() {
     const data = await fetchFilms()
     renderFilms(data)
 }
-
+*/
 fetch('https://api.disneyapi.dev/character') // URL is the API endpoint for your list
   .then((response) => response.json()) // Convert response to JSON
   .then((data) => {
