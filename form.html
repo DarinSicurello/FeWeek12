@@ -6,24 +6,61 @@
     <title>Use a form to create/post new entities</title>
 </head>
 <body>
-  <h2>My Form using create and post via JSON Api</h2>
-    <form class="form">
-      <input name="username" type="text" placeholder="username">
-      <input name="password" type="password" placeholder="password">
+  <h2>My Example Form using create and post via JSON Api</h2>
+  <form class="form">
+    <input name="username" type="text" placeholder="username">
+    <input name="password" type="password" placeholder="password">
       
-      <button type="submit">Submit</button>
-    </form>
+    <button type="submit">Submit</button>
+  </form>
+  <hr>
+  <h2>My Example Form using to Delete via JSON Api</h2>
+  <button id="delete-user">Delete User</button>
+  
 <script>
-const formEl = document.querySelector('.form');
+  const formEl = document.querySelector('.form');
+  const deleteBtn = document.getElementById('delete-user');
 
-formEl.addEventListener('submit', event => {
-  event.preventDefault();
+  // My submit button
+  formEl.addEventListener('submit', event => {
+    event.preventDefault();
 
-  const formData = new FormData(formEl); // Correct capitalization
-  const data = Object.fromEntries(formData);
-  console.log(data);
-});
+    const formData = new FormData(formEl);
+    const data = Object.fromEntries(formData);
+    const API_KEY1 = 'reqres-free-v1'; // API Key
 
-  </script> 
+    // console.log(data);      *** Simple Check Form #1
+
+    //      *** Simple fetch API Form #2
+    fetch('https://reqres.in/api/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': API_KEY1 //turned off 
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+  });
+
+  // DELETE API Call
+  deleteBtn.addEventListener('click', () => {
+    fetch('https://reqres.in/api/users/310', {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (response.status === 204) { //Mock  API response request as it not Real Database. 
+        console.log('User deleted.');
+      } else {
+        console.log('ERROR!', response.status);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });  
+</script>
 </body>
-</html>
+</html
