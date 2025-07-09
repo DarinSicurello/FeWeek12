@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Use a form to create/post new entities</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORM - FETCH PROMISES with API </title>
 </head>
+
 <body>
   <h2>My Example Form using create and post via JSON Api</h2>
   <form class="form">
@@ -36,7 +37,7 @@
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY1 //turned off 
+        'x-api-key': API_KEY1 //turned on directly
       },
       body: JSON.stringify(data)
     })
@@ -47,20 +48,21 @@
 
   // DELETE API Call
   deleteBtn.addEventListener('click', () => {
-    fetch('https://reqres.in/api/users/310', {
+    fetch('https://reqres.in/api/users/2', {
       method: 'DELETE'
     })
     .then(response => {
       if (response.status === 204) { //Mock  API response request as it not Real Database. 
         console.log('User deleted.');
       } else {
-        console.log('ERROR!', response.status);
+        console.log('ERROR! THIS IS A MOCK ERROR', response.status);
       }
     })
     .catch(error => {
-      console.error('Error:', error);
-    });
-  });  
+      console.error('Error: THIS IS A MOCK ERROR', error); 
+    }); 
+   
+  }); 
 </script>
 </body>
 </html

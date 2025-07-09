@@ -144,7 +144,7 @@ const movieTitles = [
       const data = await response.json();
 
       if (data && data.Response !== "False") {
-        return data; // valid movie found
+        return data; // Check if movie was found 
       }
     } catch (error) {
       console.warn(`Error fetching movie: ${error}`);
